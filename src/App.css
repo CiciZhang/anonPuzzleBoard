@@ -1,10 +1,14 @@
 .App {
   text-align: center;
+  background: black;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+form {
+  background: pink;
+}
+
+.displayBox {
+  background: salmon;
 }
 
 @media (prefers-reduced-motion: no-preference) {
