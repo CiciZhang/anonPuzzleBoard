@@ -17,8 +17,6 @@ class PuzzleInput extends Component {
         this.setState({
             [event.target.name]: event.target.value
         })
-        console.log(this.state.riddleInput, "this is the riddleInput")
-        console.log(this.state.answerInput, "this is the answerInput")
     }
 
     handleClick = (event) => {
@@ -33,7 +31,6 @@ class PuzzleInput extends Component {
         })
     }
     render() {
-        console.log(this.props)
         return (
          <form action = "submit" >
         <h1>Puzzle Input</h1>

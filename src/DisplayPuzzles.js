@@ -6,13 +6,14 @@ class DisplayPuzzle extends Component {
     constructor(){
         super()
         this.state = {
-            dbReturn: []
+            dbReturn: [],
+            userInputAnswer: "",
+            userFeedback: ""
         }
     }
 
     componentDidMount() {
         dbRef.on('value', (snapshot) => {
-            console.log(snapshot.val())
             const dbObject = snapshot.val()
             const newReturnedArray = []
             for (let propertyName in dbObject) {
@@ -20,38 +21,61 @@ class DisplayPuzzle extends Component {
             }
             console.log(newReturnedArray)
             this.setState({
-                dbReturn: newReturnedArray,
-                riddleAnswer: ""
+                dbReturn: newReturnedArray
             }) 
             console.log(this.state.dbReturn, "this is my dbReturn")
         })
     }
-    handleChange = (event) => {
+    
+    saveRiddleAnswer = (event) =>{
         this.setState({
-            [event.target.name]: event.target.value
+            userInputAnswer: event.target.value
         })
-        console.log(this.state.riddleInput, "this is the riddleInput")
-        console.log(this.state.answerInput, "this is the answerInput")
+        console.log(this.state.userInputAnswer, "this is the state of userInputUserInputAnswer")
     }
-    checkRiddleAnswer = (event) =>{
-        this.setState({
-            [event.target.name]: event.target.value
-        })
-        console.log(this.state.riddleAnswer)
-    }
+
+    checkUserInputAnswer = (event) => {
+        event.preventDefault()
+        const dbAnswer = event.target.value
+        const userAnswer = this.state.userInputAnswer
+        return (
+            userAnswer === dbAnswer ? this.setState({
+                userFeedback: "You got it right!"
+            }) : this.setState({
+                userFeedback: "You got it wrong."
+            })
+        )
+            
+
+        // after adding userfeedback stoppred working
+        console.log(this.userFeedback, "this is the userfeedback value")
+
+        console.log(event.target.value, "value from submit")
+        // const answerFromDB = event 
+        // return(this.state.userInputAnswer === item[1]? "True" : "False")
+        console.log(this.state.userInputAnswer, "button press submit user input answer")
+        // console.log(this.state.dbReturn[0][1])
+
+        }
+
+
     
     render() {
+        // later if you want to add counter put the display here
         return(
             <div className="displayBox">
                 <h1>Anonymous Puzzle Board</h1>
                 <ul>
-                    {this.state.dbReturn.map(item => {
-                    return <form action="submit">
-                        <p>{item[0]}</p>
-                        {console.log(item), "item's this"}
-                        <input type="text" id="riddleAnswer" onChange={this.checkRiddleAnswer} name="riddleAnswer" value={this.state.riddleAnswer} placeholder="Answer" />
-                    </form>
-                    })}
+                    <li>
+                        {this.state.dbReturn.map(item => {
+                            return <form action="submit">
+                                <p>{item[0]}</p>
+                                <input type="text" id="riddleAnswer" onChange={this.saveRiddleAnswer} placeholder="Answer" />
+                                <button value={item[1]} onClick={this.checkUserInputAnswer}>Submit</button>
+                                <p>{this.userFeedback}</p>
+                            </form>
+                        })}  
+                    </li>
                 </ul>
             </div>
            
