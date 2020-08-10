@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/ciciZhangProject5/static/css/main.8f5af5d7.chunk.css",
+    "main.js": "/ciciZhangProject5/static/js/main.e743baa2.chunk.js",
+    "main.js.map": "/ciciZhangProject5/static/js/main.e743baa2.chunk.js.map",
+    "runtime-main.js": "/ciciZhangProject5/static/js/runtime-main.28faca1e.js",
+    "runtime-main.js.map": "/ciciZhangProject5/static/js/runtime-main.28faca1e.js.map",
+    "static/js/2.43e70f26.chunk.js": "/ciciZhangProject5/static/js/2.43e70f26.chunk.js",
+    "static/js/2.43e70f26.chunk.js.map": "/ciciZhangProject5/static/js/2.43e70f26.chunk.js.map",
+    "index.html": "/ciciZhangProject5/index.html",
+    "precache-manifest.2ea16cdf6b34da197947349f1ca7d602.js": "/ciciZhangProject5/precache-manifest.2ea16cdf6b34da197947349f1ca7d602.js",
+    "service-worker.js": "/ciciZhangProject5/service-worker.js",
+    "static/css/main.8f5af5d7.chunk.css.map": "/ciciZhangProject5/static/css/main.8f5af5d7.chunk.css.map",
+    "static/js/2.43e70f26.chunk.js.LICENSE.txt": "/ciciZhangProject5/static/js/2.43e70f26.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.28faca1e.js",
+    "static/js/2.43e70f26.chunk.js",
+    "static/css/main.8f5af5d7.chunk.css",
+    "static/js/main.e743baa2.chunk.js"
+  ]
+}
