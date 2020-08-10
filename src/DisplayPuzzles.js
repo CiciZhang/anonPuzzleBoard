@@ -2,14 +2,17 @@ import React, {Component} from "react"
 import firebase from "./firebase"
 const dbRef = firebase.database().ref()
 
+// got it to display the text but now the text displays on ALL the entries in addition to that it is constant so need a way to clear it
+
 class DisplayPuzzle extends Component {
     constructor(){
         super()
         this.state = {
             dbReturn: [],
             userInputAnswer: "",
-            userFeedback: ""
+            userFeedback: "Right",
         }
+        console.log(this.state.userFeedback, "this is the userFeedback")
     }
 
     componentDidMount() {
@@ -38,27 +41,19 @@ class DisplayPuzzle extends Component {
         event.preventDefault()
         const dbAnswer = event.target.value
         const userAnswer = this.state.userInputAnswer
-        return (
-            userAnswer === dbAnswer ? this.setState({
-                userFeedback: "You got it right!"
-            }) : this.setState({
-                userFeedback: "You got it wrong."
+        userAnswer === dbAnswer 
+            ? this.setState({
+                userFeedback: "You got it right"
+            }) 
+            : this.setState({
+                userFeedback: "You got it wrong"
             })
-        )
-            
+            console.log(userAnswer, "this is the user answer")
+            console.log(dbAnswer, "This is the right answer from the database")
+           
+    }
 
-        // after adding userfeedback stoppred working
-        console.log(this.userFeedback, "this is the userfeedback value")
-
-        console.log(event.target.value, "value from submit")
-        // const answerFromDB = event 
-        // return(this.state.userInputAnswer === item[1]? "True" : "False")
-        console.log(this.state.userInputAnswer, "button press submit user input answer")
-        // console.log(this.state.dbReturn[0][1])
-
-        }
-
-
+    
     
     render() {
         // later if you want to add counter put the display here
@@ -72,7 +67,8 @@ class DisplayPuzzle extends Component {
                                 <p>{item[0]}</p>
                                 <input type="text" id="riddleAnswer" onChange={this.saveRiddleAnswer} placeholder="Answer" />
                                 <button value={item[1]} onClick={this.checkUserInputAnswer}>Submit</button>
-                                <p>{this.userFeedback}</p>
+                                <p>{this.state.userFeedback}</p>
+                                {console.log(this.state.userFeedback, "This is the userFeedback")}
                             </form>
                         })}  
                     </li>
