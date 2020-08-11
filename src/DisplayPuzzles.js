@@ -1,8 +1,6 @@
-import React, {Component} from "react"
-import firebase from "./firebase"
+import React, {Component} from "react";
+import firebase from "./firebase";
 
-
-// got it to display the text but now the text displays on ALL the entries in addition to that it is constant so need a way to clear it
 
 class DisplayPuzzle extends Component {
     constructor(){
@@ -10,9 +8,8 @@ class DisplayPuzzle extends Component {
         this.state = {
             dbReturn: [],
             userInputAnswer: "",
-            userFeedback: "Right",
+            userFeedback: "Type in an answer and see if you're right!",
         }
-        console.log(this.state.userFeedback, "this is the userFeedback")
     }
 
     componentDidMount() {
@@ -25,14 +22,11 @@ class DisplayPuzzle extends Component {
                     id: propertyName,
                     riddleInfo: dbObject[propertyName]
                 }
-                console.log(dbObject[propertyName], "this is dbbject propertyname")
                 newReturnedArray.push(riddleObject)
             }
-            console.log(newReturnedArray)
             this.setState({
                 dbReturn: newReturnedArray
             }) 
-            console.log(this.state.dbReturn, "this is my dbReturn")
         })
     }
     
@@ -40,7 +34,6 @@ class DisplayPuzzle extends Component {
         this.setState({
             userInputAnswer: event.target.value
         })
-        console.log(this.state.userInputAnswer, "this is the state of userInputUserInputAnswer")
     }
 
     checkUserInputAnswer = (event) => {
@@ -49,18 +42,17 @@ class DisplayPuzzle extends Component {
         const userAnswer = this.state.userInputAnswer
         userAnswer === dbAnswer 
             ? this.setState({
-                userFeedback: "You got it right"
+                userFeedback: `You got it right! The answer is ${dbAnswer}`
             }) 
             : this.setState({
-                userFeedback: "You got it wrong"
+                userFeedback: `The answer is not ${userAnswer} please try again.`
             })
-            console.log(userAnswer, "this is the user answer")
-            console.log(dbAnswer, "This is the right answer from the database")
+        this.setState({
+            userInputAnswer: "",
+        })
            
     }
 
-    
-    
     render() {
         // later if you want to add counter put the display here
         return(
@@ -74,18 +66,15 @@ class DisplayPuzzle extends Component {
                                         <p>{riddleObject.riddleInfo[0]}</p>
                                         <input type="text" id="riddleAnswer" onChange={this.saveRiddleAnswer} placeholder="Answer" />
                                         <button value={riddleObject.riddleInfo[1]} onClick={this.checkUserInputAnswer}>Submit</button>
-                                        <p>{this.state.userFeedback}</p>
                                     </form>
                                 </li>)
                         })
                     }
+                <p>{this.state.userFeedback}</p>
             </div>
         )
     }
 }
             
-                        
-                 
-
 
 export default DisplayPuzzle 
