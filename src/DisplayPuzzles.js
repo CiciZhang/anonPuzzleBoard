@@ -1,6 +1,6 @@
 import React, {Component} from "react"
 import firebase from "./firebase"
-const dbRef = firebase.database().ref()
+
 
 // got it to display the text but now the text displays on ALL the entries in addition to that it is constant so need a way to clear it
 
@@ -16,11 +16,17 @@ class DisplayPuzzle extends Component {
     }
 
     componentDidMount() {
+        const dbRef = firebase.database().ref()
         dbRef.on('value', (snapshot) => {
             const dbObject = snapshot.val()
             const newReturnedArray = []
             for (let propertyName in dbObject) {
-                newReturnedArray.push(dbObject[propertyName])
+                const riddleObject = {
+                    id: propertyName,
+                    riddleInfo: dbObject[propertyName]
+                }
+                console.log(dbObject[propertyName], "this is dbbject propertyname")
+                newReturnedArray.push(riddleObject)
             }
             console.log(newReturnedArray)
             this.setState({
@@ -60,23 +66,26 @@ class DisplayPuzzle extends Component {
         return(
             <div className="displayBox">
                 <h1>Anonymous Puzzle Board</h1>
-                <ul>
-                    <li>
-                        {this.state.dbReturn.map(item => {
-                            return <form action="submit">
-                                <p>{item[0]}</p>
-                                <input type="text" id="riddleAnswer" onChange={this.saveRiddleAnswer} placeholder="Answer" />
-                                <button value={item[1]} onClick={this.checkUserInputAnswer}>Submit</button>
-                                <p>{this.state.userFeedback}</p>
-                                {console.log(this.state.userFeedback, "This is the userFeedback")}
-                            </form>
-                        })}  
-                    </li>
-                </ul>
+                    {
+                        this.state.dbReturn.map((riddleObject) => {
+                            return (
+                                <li key={riddleObject.id}>
+                                    <form action="submit">
+                                        <p>{riddleObject.riddleInfo[0]}</p>
+                                        <input type="text" id="riddleAnswer" onChange={this.saveRiddleAnswer} placeholder="Answer" />
+                                        <button value={riddleObject.riddleInfo[1]} onClick={this.checkUserInputAnswer}>Submit</button>
+                                        <p>{this.state.userFeedback}</p>
+                                    </form>
+                                </li>)
+                        })
+                    }
             </div>
-           
         )
     }
 }
+            
+                        
+                 
+
 
 export default DisplayPuzzle 

@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import firebase from "./firebase";
-const dbRef = firebase.database().ref()
 
 
 class PuzzleInput extends Component {
@@ -20,6 +19,7 @@ class PuzzleInput extends Component {
     }
 
     handleClick = (event) => {
+        const dbRef = firebase.database().ref()
         event.preventDefault()
         dbRef.push(
             [this.state.riddleInput, this.state.answerInput, this.state.counter]
