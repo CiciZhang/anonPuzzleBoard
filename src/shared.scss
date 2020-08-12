@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Arimo&family=Black+Ops+One&display=swap");
+
+$specialFont: 'Black Ops One', cursive;
+$bodyFont: 'Arimo', sans-serif;
+
+
+html {
+    font-size: 62.5%;
+    font-family: $bodyFont;
+}
+
+h1 {
+    font-family: $specialFont;
+    font-size: 5rem;
+}
+
+
+
+header {
+    height: 10vh;
+    min-height: 50px;
+    background: rgb(38, 140, 236);
+}
+
+.background {
+    height: 90vh;
+    background: rgb(211, 255, 150);
+}
