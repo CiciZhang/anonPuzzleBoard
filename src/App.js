@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './App.scss';
 // import firebase from "./firebase";
 import PuzzleInput from "./PuzzleInput"
 import DisplayPizzles from "./DisplayPuzzles"
@@ -27,11 +27,17 @@ changeDisplay = () =>{
       <div className="App">
         {this.state.puzzleDisplayOn 
         ?<div>
-          <button onClick={this.changeDisplay}>Let's get Started</button> 
+          <header>
+              <h1>Anonymous Puzzle Board</h1>
+              <button onClick={this.changeDisplay}>Let's get Started</button> 
+          </header>
           <DisplayPizzles /> 
         </div>
         : <div>
-          <button onClick={this.changeDisplay}>Go Back</button>
+          <header>
+            <button onClick={this.changeDisplay}>Go Back</button>
+          </header>
+          
           <PuzzleInput />
           </div>}
       </div>

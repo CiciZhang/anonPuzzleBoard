@@ -53,11 +53,16 @@ class DisplayPuzzle extends Component {
            
     }
 
+    deletePuzzle = (riddleID) => {
+        const dbRef = firebase.database().ref()
+        dbRef.child(riddleID).remove()
+    }
+
     render() {
         // later if you want to add counter put the display here
         return(
-            <div className="displayBox">
-                <h1>Anonymous Puzzle Board</h1>
+            <div className="background">
+                <ul>
                     {
                         this.state.dbReturn.map((riddleObject) => {
                             return (
@@ -66,10 +71,12 @@ class DisplayPuzzle extends Component {
                                         <p>{riddleObject.riddleInfo[0]}</p>
                                         <input type="text" id="riddleAnswer" onChange={this.saveRiddleAnswer} placeholder="Answer" />
                                         <button value={riddleObject.riddleInfo[1]} onClick={this.checkUserInputAnswer}>Submit</button>
+                                        <button onClick={()=>{this.deletePuzzle(riddleObject.id)}}>Delete Me</button>
                                     </form>
                                 </li>)
                         })
                     }
+                </ul>
                 <p>{this.state.userFeedback}</p>
             </div>
         )
