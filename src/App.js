@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.scss';
-// import firebase from "./firebase";
-import PuzzleInput from "./PuzzleInput"
-import DisplayPizzles from "./DisplayPuzzles"
+import PuzzleInput from "./PuzzleInput";
+import DisplayPizzles from "./DisplayPuzzles";
+import Modal from "./Modal"
 
 class App extends Component {
   constructor () {
@@ -23,7 +23,6 @@ changeDisplay = () =>{
 
   render() {
     return (
-    
       <div className="app">
         {this.state.puzzleDisplayOn 
         ?<div>

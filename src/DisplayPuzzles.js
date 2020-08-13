@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import firebase from "./firebase";
+import Modal from "./Modal";
 
 
 class DisplayPuzzle extends Component {
@@ -8,7 +9,8 @@ class DisplayPuzzle extends Component {
         this.state = {
             dbReturn: [],
             userInputAnswer: "",
-            userFeedback: "Type in an answer and see if you're right!",
+            userFeedback: "",
+            answerBool: false
         }
     }
 
@@ -32,7 +34,8 @@ class DisplayPuzzle extends Component {
     
     saveRiddleAnswer = (event) =>{
         this.setState({
-            userInputAnswer: event.target.value
+            userInputAnswer: event.target.value,
+            answerBool: false
         })
     }
 
@@ -42,33 +45,41 @@ class DisplayPuzzle extends Component {
         const userAnswer = this.state.userInputAnswer
         userAnswer === dbAnswer 
             ? this.setState({
-                userFeedback: `You got it right! The answer is ${dbAnswer}`
+                userFeedback: `You got it right! The answer is ${dbAnswer}`,
+                answerBool: true
             }) 
             : this.setState({
                 userFeedback: `The answer is not ${userAnswer} please try again.`
             })
-        this.setState({
-            userInputAnswer: "",
-        })
-           
+        this.toggleModal()
     }
 
-    deletePuzzle = (riddleID) => {
-        const dbRef = firebase.database().ref()
-        dbRef.child(riddleID).remove()
-    }
+
+    toggleModal = () => {
+    const modal = document.querySelector(".modal");
+    modal.classList.toggle("show-modal");
+    } 
+
+    
+// var trigger = document.querySelector(".trigger");
+// var closeButton = document.querySelector(".close-button");
+
+
 
     render() {
         // later if you want to add counter put the display here
         return(
             <main className="background">
+                
                 <ul>
+                    
                     {
                         this.state.dbReturn.map((riddleObject) => {
                             return (
                                 <li key={riddleObject.id}>
+                                    <Modal answerDisplay={this.state.userFeedback} id={riddleObject.id}
+                                    answerBool={this.state.answerBool}></Modal>
                                     <form action="submit">
-                                        <button className="deleteButton" onClick={() => { this.deletePuzzle(riddleObject.id) }}>X</button>
                                         <div className="textBox">
                                             <p>{riddleObject.riddleInfo[0]}</p>
                                         </div>
@@ -79,8 +90,9 @@ class DisplayPuzzle extends Component {
                         })
                     }
                 </ul>
+                 
                 <div className="return">
-                    <p>{this.state.userFeedback}</p>
+                    <p>{"moshi"}</p>
                 </div>
                 
             </main>
