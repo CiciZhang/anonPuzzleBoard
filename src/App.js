@@ -24,10 +24,10 @@ changeDisplay = () =>{
   render() {
     return (
     
-      <div className="App">
+      <div className="app">
         {this.state.puzzleDisplayOn 
         ?<div>
-          <header>
+          <header className="headDisplayPuzz">
               <h1>Anonymous Puzzle Board</h1>
               <button onClick={this.changeDisplay}>Let's get Started</button> 
           </header>

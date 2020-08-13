@@ -61,24 +61,29 @@ class DisplayPuzzle extends Component {
     render() {
         // later if you want to add counter put the display here
         return(
-            <div className="background">
+            <main className="background">
                 <ul>
                     {
                         this.state.dbReturn.map((riddleObject) => {
                             return (
                                 <li key={riddleObject.id}>
                                     <form action="submit">
-                                        <p>{riddleObject.riddleInfo[0]}</p>
+                                        <button className="deleteButton" onClick={() => { this.deletePuzzle(riddleObject.id) }}>X</button>
+                                        <div className="textBox">
+                                            <p>{riddleObject.riddleInfo[0]}</p>
+                                        </div>
                                         <input type="text" id="riddleAnswer" onChange={this.saveRiddleAnswer} placeholder="Answer" />
                                         <button value={riddleObject.riddleInfo[1]} onClick={this.checkUserInputAnswer}>Submit</button>
-                                        <button onClick={()=>{this.deletePuzzle(riddleObject.id)}}>Delete Me</button>
                                     </form>
                                 </li>)
                         })
                     }
                 </ul>
-                <p>{this.state.userFeedback}</p>
-            </div>
+                <div className="return">
+                    <p>{this.state.userFeedback}</p>
+                </div>
+                
+            </main>
         )
     }
 }
