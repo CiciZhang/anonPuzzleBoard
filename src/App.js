@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.scss';
 import PuzzleInput from "./PuzzleInput";
 import DisplayPizzles from "./DisplayPuzzles";
-import Modal from "./Modal"
 
 class App extends Component {
   constructor () {
@@ -18,7 +17,6 @@ changeDisplay = () =>{
   this.setState({
     puzzleDisplayOn: !displayState
   })
-  console.log(this.state.puzzleDisplayOn)
 }
 
   render() {

@@ -10,6 +10,7 @@ const closeButton = document.querySelector(".close-button");
 
 class Modal extends Component {
     deletePuzzle = (riddleID) => {
+        console.log(riddleID)
         const dbRef = firebase.database().ref()
         dbRef.child(riddleID).remove()
     }
@@ -20,7 +21,7 @@ class Modal extends Component {
     } 
 
     render(){
-        console.log(this.props)
+        console.log(this.props.id, "this is my props.id")
         return (
             <div className="modal" >
                 <div className="modal-content">

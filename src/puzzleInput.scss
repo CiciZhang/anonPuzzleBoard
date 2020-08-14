@@ -8,24 +8,23 @@
     justify-content: center;
     align-items: center;
     background: $teal;
-    height: 80vh;
     form {
         margin-top: 40px;
         display: flex;
-        height: 500px;
+        max-height: 500px;
         background: $red;
         border-radius: 10px;
         flex-direction: column;
         width: 50%;
         justify-content: space-evenly;
+        padding: 40px;
+        text-align: center;
 
         div {
-            // background: blue;
             display: flex;
             font-size: 2.5rem;
             align-items: center;
             flex-direction: column;
-            
         }
         .riddleArea input {
             padding-bottom: 100px;
@@ -36,8 +35,7 @@
 }
 
 .formDiv input {
-    
-    margin-top: 20px;
+    margin: 20px 0;
     }
     
 

@@ -234,6 +234,7 @@ button:hover {
 html {
   font-size: 62.5%;
   font-family: "Arimo", sans-serif;
+  background: #9ddfd8;
 }
 
 h1, h2 {
@@ -243,13 +244,13 @@ h1, h2 {
 
 header {
   height: 20vh;
-  min-height: 50px;
+  min-height: 100px;
   background: #268cec;
 }
 
 .background {
   height: 80vh;
-  background: #17C3B2;
+  background: #9ddfd8;
 }
 
 header {
@@ -266,7 +267,8 @@ header {
 }
 
 header h2 {
-  max-width: 300px;
+  max-width: 200px;
+  margin: 10px;
 }
 
 header button {
@@ -276,7 +278,7 @@ header button {
 }
 
 ul {
-  background: #17C3B2;
+  background: #9ddfd8;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -342,6 +344,75 @@ ul form .textBox p {
   margin: 5px;
 }
 
+.puzzInput {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.formDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #9ddfd8;
+}
+
+.formDiv form {
+  margin-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-height: 500px;
+  background: #FE6D73;
+  border-radius: 10px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 50%;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding: 40px;
+}
+
+.formDiv form div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 2.5rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.formDiv form .riddleArea input {
+  padding-bottom: 100px;
+  width: 70%;
+}
+
+.formDiv input {
+  margin: 20px 0;
+}
+
+.formDiv button {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding: 20px 30px;
+}
+
 .modal {
   position: fixed;
   left: 0;
@@ -400,5 +471,11 @@ h2 {
 
 .deleteButton {
   border-radius: 5px;
+}
+
+@media (max-width: 680px) {
+  header {
+    background: pink;
+  }
 }
 /*# sourceMappingURL=App.css.map */

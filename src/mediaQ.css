@@ -1,0 +1,14 @@
+@media (max-width: 680px) {
+  header, .puzzInput {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 500px;
+    text-align: center;
+  }
+  p, input {
+    font-size: 1.2rem;
+  }
+}
+/*# sourceMappingURL=mediaQ.css.map */

@@ -8,7 +8,7 @@ class DisplayPuzzle extends Component {
         super()
         this.state = {
             dbReturn: [],
-            userInputAnswer: "",
+            userInputAnswer: "BLANK",
             userFeedback: "",
             answerBool: false
         }
@@ -27,15 +27,32 @@ class DisplayPuzzle extends Component {
                 newReturnedArray.push(riddleObject)
             }
             this.setState({
-                dbReturn: newReturnedArray
+                dbReturn: newReturnedArray,
             }) 
         })
     }
-    
+
+    errorCheck = (param) => {
+        if (param.length === 0) {
+            alert("Come on, give me an INPUT")
+        }
+        else if (param.length > 200) {
+            alert("Input too long!")
+        }
+    }
+
     saveRiddleAnswer = (event) =>{
+        event.target.value.length > 200
+        ?this.setState({
+            userInputAnswer: "this long"
+            })
+        :event.target.value.length === 0
+        ? this.setState({
+            userInputAnswer: "BLANK"
+        })
+        :
         this.setState({
             userInputAnswer: event.target.value,
-            answerBool: false
         })
     }
 
@@ -46,10 +63,11 @@ class DisplayPuzzle extends Component {
         userAnswer === dbAnswer 
             ? this.setState({
                 userFeedback: `You got it right! The answer is ${dbAnswer}`,
-                answerBool: true
+                answerBool: true,
             }) 
             : this.setState({
-                userFeedback: `The answer is not ${userAnswer} please try again.`
+                userFeedback: `The answer is not ${userAnswer} please try again.`,
+                answerBool: false,
             })
         this.toggleModal()
     }
@@ -60,8 +78,8 @@ class DisplayPuzzle extends Component {
     modal.classList.toggle("show-modal");
     } 
 
+    
     render() {
-        // later if you want to add counter put the display here
         return(
             <main className="background">
                 
