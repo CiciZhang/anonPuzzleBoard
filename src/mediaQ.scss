@@ -1,6 +1,5 @@
 @media (max-width: 680px) {
     header, .puzzInput {
-        // background: pink;
         flex-direction: column;
         height: 500px;
         text-align: center;
@@ -8,10 +7,4 @@
     p, input {
         font-size: 1.2rem;
     }
-    // h1 {
-    //     font-size: 2rem;
-    // }
-    // h2 {
-    //     font-size: 1.5rem;
-    // }
 }

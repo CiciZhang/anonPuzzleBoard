@@ -11,27 +11,14 @@ class PuzzleInput extends Component {
         }
     }
 
-    // errorCheck=(param)=>{
-    //     if (param.length === 0) {
-    //        alert("Come on, give me an INPUT")
-    //     } 
-    //     else if (param.length > 200) {
-    //         alert("Input too long!")
-    //     } 
-    // }
-
     handleChange = (event) => {
         console.log(event.target.value, "handle change detector")
-        // console.log(event.target.value.length, "this is my event target value")
-        // this.errorCheck(event.target.value)
          if(event.target.value.length > 200){
            return alert("You're putting in too much!")
         } else {
         this.setState({
             [event.target.name]: event.target.value
         })}
-        
-      
     }
 
     handleClick = (event) => {

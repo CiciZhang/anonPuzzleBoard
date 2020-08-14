@@ -44,8 +44,6 @@ changeDisplay = () =>{
       </div>
     )
   }
-
-  
 }
 
 export default App;
