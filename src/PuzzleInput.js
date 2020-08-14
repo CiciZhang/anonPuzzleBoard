@@ -7,44 +7,52 @@ class PuzzleInput extends Component {
         super()
         this.state = {
             riddleInput: '',
-            answerInput: '',
-            counter: 0,
+            answerInput: ''
         }
     }
 
-    errorCheck=(param)=>{
-        if (param.length === 0) {
-           alert("Come on, give me an INPUT")
-        } 
-        else if (param.length > 200) {
-            alert("Input too long!")
-        } 
-    }
+    // errorCheck=(param)=>{
+    //     if (param.length === 0) {
+    //        alert("Come on, give me an INPUT")
+    //     } 
+    //     else if (param.length > 200) {
+    //         alert("Input too long!")
+    //     } 
+    // }
 
     handleChange = (event) => {
-        this.errorCheck(event.target.value)
+        console.log(event.target.value, "handle change detector")
+        // console.log(event.target.value.length, "this is my event target value")
+        // this.errorCheck(event.target.value)
+         if(event.target.value.length > 200){
+           return alert("You're putting in too much!")
+        } else {
         this.setState({
             [event.target.name]: event.target.value
-        })
+        })}
+        
+      
     }
 
     handleClick = (event) => {
         const dbRef = firebase.database().ref()
         event.preventDefault()
-        dbRef.push(
-            [this.state.riddleInput, this.state.answerInput, this.state.counter]
-        )
+        if (this.state.riddleInput.length === 0 || this.state.answerInput.length === 0){
+            return alert("Please give me something!")
+        } else {
+            dbRef.push(
+                [this.state.riddleInput, this.state.answerInput])
+        }   
         this.setState({
             riddleInput: '',
             answerInput: '',
-            counter: 0,
         })
     }
     render() {
         return (
          <form action = "submit" >
             <div className="riddleArea">
-                <label htmlFor="riddleInput">Please input your riddle</label>
+                <label htmlFor="riddleInput">Please input your puzzle</label>
                 <input type="textarea" id="riddleInput" onChange={this.handleChange} name="riddleInput" value={this.state.riddleInput} placeholder="I am round and I live underground" />
             </div>
             <div className="answerArea">

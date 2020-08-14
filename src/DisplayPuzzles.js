@@ -78,7 +78,12 @@ class DisplayPuzzle extends Component {
     modal.classList.toggle("show-modal");
     } 
 
-    
+    deletePuzzle = (riddleID) => {
+        console.log(riddleID)
+        const dbRef = firebase.database().ref()
+        dbRef.child(riddleID).remove()
+    }
+
     render() {
         return(
             <main className="background">
@@ -89,7 +94,7 @@ class DisplayPuzzle extends Component {
                         this.state.dbReturn.map((riddleObject) => {
                             return (
                                 <li key={riddleObject.id}>
-                                    <Modal answerDisplay={this.state.userFeedback} id={riddleObject.id}
+                                    <Modal answerDisplay={this.state.userFeedback}
                                     answerBool={this.state.answerBool} toggleModal={()=>this.toggleModal}></Modal>
                                     <form action="submit">
                                         <div className="textBox">
@@ -97,6 +102,7 @@ class DisplayPuzzle extends Component {
                                         </div>
                                         <input type="text" id="riddleAnswer" onChange={this.saveRiddleAnswer} placeholder="Answer" />
                                         <button value={riddleObject.riddleInfo[1]} onClick={this.checkUserInputAnswer}>Submit</button>
+                                        <button className="deleteButton" onClick={() => { this.deletePuzzle(riddleObject.id) }}>Delete This Question</button>
                                     </form>
                                 </li>)
                         })

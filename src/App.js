@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.scss';
 import PuzzleInput from "./PuzzleInput";
-import DisplayPizzles from "./DisplayPuzzles";
+import DisplayPuzzles from "./DisplayPuzzles";
 
 class App extends Component {
   constructor () {
@@ -29,12 +29,12 @@ changeDisplay = () =>{
               <h2>Can you solve it?</h2>
               <button onClick={this.changeDisplay}>Puzzle Submission</button> 
           </header>
-          <DisplayPizzles /> 
+          <DisplayPuzzles /> 
         </div>
         : <div>
           <header className="puzzInput">
             <h1 >Puzzle Input</h1>
-            <h2>Submit your riddle in the space below</h2>
+            <h2>Submit your puzzle in the space below</h2>
             <button onClick={this.changeDisplay}>Go Back</button>
           </header>
             <div className="formDiv">

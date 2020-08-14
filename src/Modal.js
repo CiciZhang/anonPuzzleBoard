@@ -9,11 +9,6 @@ const modal = document.querySelector(".modal");
 const closeButton = document.querySelector(".close-button");
 
 class Modal extends Component {
-    deletePuzzle = (riddleID) => {
-        console.log(riddleID)
-        const dbRef = firebase.database().ref()
-        dbRef.child(riddleID).remove()
-    }
 
     toggleModal = () => {
         const modal = document.querySelector(".modal");
@@ -27,11 +22,11 @@ class Modal extends Component {
                 <div className="modal-content">
                     <span className="close-button" onClick={this.toggleModal}>X</span>
                     <h2>{this.props.answerDisplay}</h2>
-                    {
+                    {/* {
                         this.props.answerBool
-                        ?<button className="deleteButton" onClick={() => { this.deletePuzzle(this.props.id) }}>Delete This Question</button>
+                        ?
                         :<p></p>
-                    }
+                    } */}
                    
                 </div>
             </div>
