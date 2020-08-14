@@ -1,31 +1,31 @@
 import React, {Component} from "react";
 import firebase from "./firebase";
 
-// Modal referenced from https://sabe.io/tutorials/how-to-create-modal-popup-box but HEAVILY changed to work with react
+// Modal referenced from https://sabe.io/tutorials/how-to-create-modal-popup-box but changed to work with react
 
 
-var modal = document.querySelector(".modal");
-// var trigger = document.querySelector(".trigger");
-// var closeButton = document.querySelector(".close-button");
+const modal = document.querySelector(".modal");
 
-function toggleModal() {
-    modal.classList.toggle("show-modal");
-}
-
-
+const closeButton = document.querySelector(".close-button");
 
 class Modal extends Component {
     deletePuzzle = (riddleID) => {
         const dbRef = firebase.database().ref()
         dbRef.child(riddleID).remove()
     }
+
+    toggleModal = () => {
+        const modal = document.querySelector(".modal");
+        modal.classList.toggle("show-modal");
+    } 
+
     render(){
         console.log(this.props)
         return (
             <div className="modal" >
                 <div className="modal-content">
-                    <span className="close-button">X</span>
-                    <p>{this.props.answerDisplay}</p>
+                    <span className="close-button" onClick={this.toggleModal}>X</span>
+                    <h2>{this.props.answerDisplay}</h2>
                     {
                         this.props.answerBool
                         ?<button className="deleteButton" onClick={() => { this.deletePuzzle(this.props.id) }}>Delete This Question</button>

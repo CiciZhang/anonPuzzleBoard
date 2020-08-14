@@ -227,50 +227,56 @@ button {
   border-radius: 10%;
 }
 
+button:hover {
+  background: #cccccc;
+}
+
 html {
   font-size: 62.5%;
   font-family: "Arimo", sans-serif;
 }
 
-h1 {
+h1, h2 {
   font-family: "Black Ops One", cursive;
   font-size: 5rem;
 }
 
 header {
-  height: 10vh;
+  height: 20vh;
   min-height: 50px;
   background: #268cec;
 }
 
 .background {
-  height: 90vh;
+  height: 80vh;
   background: #17C3B2;
 }
 
-.headDisplayPuzz {
+header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   padding: 0 20px;
 }
 
-.headDisplayPuzz button {
-  border: 2px solid red;
+header h2 {
+  max-width: 300px;
 }
 
-.headDisplayPuzz h1 {
-  border: 2px solid blue;
+header button {
+  border-radius: 5px;
+  padding: 30px 20px;
+  font-size: 2.5rem;
 }
 
 ul {
-  background: salmon;
+  background: #17C3B2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -281,7 +287,6 @@ ul {
 }
 
 ul form {
-  border: 2px solid red;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -294,13 +299,22 @@ ul form {
           align-items: center;
   width: 300px;
   background: #FEF9EF;
-  height: 500px;
+  height: 350px;
   margin: 20px;
+  border-radius: 10px;
+  -webkit-box-shadow: 2px 2px 2px #0d3621;
+          box-shadow: 2px 2px 2px #0d3621;
+}
+
+ul form input {
+  margin: 15px 0;
+  width: 70%;
+  padding: 15px;
+  font-size: 1.5rem;
 }
 
 ul form .textBox {
   height: 200px;
-  background: pink;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -339,5 +353,52 @@ ul form .textBox p {
   visibility: hidden;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 1rem 1.5rem;
+  width: 24rem;
+  border-radius: 0.5rem;
+  word-wrap: break-word;
+}
+
+.close-button {
+  float: right;
+  width: 1.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  background-color: #FE6D73;
+  margin-left: 20px;
+}
+
+.close-button:hover {
+  background-color: darkgray;
+}
+
+.show-modal {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: visibility 0s linear 0s, opacity 0.25s 0s, -webkit-transform 0.25s;
+  transition: visibility 0s linear 0s, opacity 0.25s 0s, -webkit-transform 0.25s;
+  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s, -webkit-transform 0.25s;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+.deleteButton {
+  border-radius: 5px;
 }
 /*# sourceMappingURL=App.css.map */

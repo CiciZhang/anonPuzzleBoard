@@ -60,12 +60,6 @@ class DisplayPuzzle extends Component {
     modal.classList.toggle("show-modal");
     } 
 
-    
-// var trigger = document.querySelector(".trigger");
-// var closeButton = document.querySelector(".close-button");
-
-
-
     render() {
         // later if you want to add counter put the display here
         return(
@@ -78,7 +72,7 @@ class DisplayPuzzle extends Component {
                             return (
                                 <li key={riddleObject.id}>
                                     <Modal answerDisplay={this.state.userFeedback} id={riddleObject.id}
-                                    answerBool={this.state.answerBool}></Modal>
+                                    answerBool={this.state.answerBool} toggleModal={()=>this.toggleModal}></Modal>
                                     <form action="submit">
                                         <div className="textBox">
                                             <p>{riddleObject.riddleInfo[0]}</p>
@@ -90,11 +84,6 @@ class DisplayPuzzle extends Component {
                         })
                     }
                 </ul>
-                 
-                <div className="return">
-                    <p>{"moshi"}</p>
-                </div>
-                
             </main>
         )
     }

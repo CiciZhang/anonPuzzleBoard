@@ -1,33 +1,44 @@
-.headDisplayPuzz{
+header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     padding: 0 20px;
-    button {
-        border: 2px solid red;
-    };
-    h1 {
-        border: 2px solid blue;
+    h2 {
+        max-width: 200px;
+        margin: 10px
+        
     }
+    button {
+        border-radius: 5px;
+        padding: 30px 20px;
+        font-size: 2.5rem;
+    };
 }
 
 ul {
-    background: salmon;
+    background: $teal;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     form {
-        border: 2px solid red;
         display: flex;
         flex-direction: column;
         align-items: center;
         width: 300px;
         background: $white;
-        height: 500px;
+        height: 350px;
         margin: 20px;
+        border-radius: 10px;
+        box-shadow: 2px 2px 2px rgb(13, 54, 33);
+        input {
+            margin: 15px 0;
+            width: 70%;
+            padding: 15px;
+            font-size: 1.5rem;
+        }
         .textBox {
             height: 200px;
-            background: pink;
+            // background: pink;
             width: 100%;
             display: flex;
             justify-content: center;

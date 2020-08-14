@@ -33,16 +33,15 @@ class PuzzleInput extends Component {
     render() {
         return (
          <form action = "submit" >
-        <h1>Puzzle Input</h1>
-        <div className="riddleArea">
-            <label htmlFor="riddleInput">Please input your riddle</label>
-            <input type="textarea" id="riddleInput" onChange={this.handleChange} name="riddleInput" value={this.state.riddleInput} placeholder="I am round and I live underground" />
-        </div>
-        <div className="answerArea">
-            <label htmlFor="answerInput">Please input your answer</label>
-            <input type="text" name="answerInput" id="answerInput" placeholder="potato" onChange={this.handleChange} value={this.state.answerInput} />
-        </div>
-        <button onClick={this.handleClick}>Submit</button>
+            <div className="riddleArea">
+                <label htmlFor="riddleInput">Please input your riddle</label>
+                <input type="textarea" id="riddleInput" onChange={this.handleChange} name="riddleInput" value={this.state.riddleInput} placeholder="I am round and I live underground" />
+            </div>
+            <div className="answerArea">
+                <label htmlFor="answerInput">Please input your answer</label>
+                <input type="text" name="answerInput" id="answerInput" placeholder="potato" onChange={this.handleChange} value={this.state.answerInput} />
+            </div>
+            <button onClick={this.handleClick}>Submit</button>
         </form >
         )
     }

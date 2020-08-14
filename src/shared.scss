@@ -6,7 +6,7 @@ $specialFont: 'Black Ops One', cursive;
 $bodyFont: 'Arimo', sans-serif;
 
 $blue: #227C9D;
-$teal: #17C3B2;
+$teal: #9ddfd8;
 $yellow: #FFCB77;
 $white: #FEF9EF;
 $red: #FE6D73;
@@ -27,34 +27,27 @@ button {
     @include buttonDIY()
 }
 
+button:hover{
+    background: rgb(204, 204, 204);
+}
+
 html {
     font-size: 62.5%;
     font-family: $bodyFont;
-    // display: flex;
-    // justify-content: center;
-    // width: 100vw;
 }
 
-h1 {
+h1, h2 {
     font-family: $specialFont;
     font-size: 5rem;
 }
 
-
-
 header {
-    height: 10vh;
+    height: 20vh;
     min-height: 50px;
     background: rgb(38, 140, 236);
 }
 
 .background {
-    height: 90vh;
+    height: 80vh;
     background:$teal;
-}
-
-.app {
-    // max-width: 1800px;
-    // width: 100%;
-    
 }

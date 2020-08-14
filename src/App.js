@@ -26,18 +26,22 @@ changeDisplay = () =>{
       <div className="app">
         {this.state.puzzleDisplayOn 
         ?<div>
-          <header className="headDisplayPuzz">
+          <header>
               <h1>Anonymous Puzzle Board</h1>
-              <button onClick={this.changeDisplay}>Let's get Started</button> 
+              <h2>Can you solve it?</h2>
+              <button onClick={this.changeDisplay}>Puzzle Submission</button> 
           </header>
           <DisplayPizzles /> 
         </div>
         : <div>
-          <header>
+          <header className="puzzInput">
+            <h1 >Puzzle Input</h1>
+            <h2>Submit your riddle in the space below</h2>
             <button onClick={this.changeDisplay}>Go Back</button>
           </header>
-          
-          <PuzzleInput />
+            <div className="formDiv">
+            <PuzzleInput />
+            </div>
           </div>}
       </div>
     )
