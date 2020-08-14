@@ -79,7 +79,6 @@ class DisplayPuzzle extends Component {
     } 
 
     deletePuzzle = (riddleID) => {
-        console.log(riddleID)
         const dbRef = firebase.database().ref()
         dbRef.child(riddleID).remove()
     }

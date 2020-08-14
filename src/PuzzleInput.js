@@ -12,7 +12,6 @@ class PuzzleInput extends Component {
     }
 
     handleChange = (event) => {
-        console.log(event.target.value, "handle change detector")
          if(event.target.value.length > 200){
            return alert("You're putting in too much!")
         } else {

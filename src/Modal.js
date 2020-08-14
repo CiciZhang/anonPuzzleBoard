@@ -10,7 +10,6 @@ class Modal extends Component {
     } 
    
     render(){
-        console.log(this.props.id, "this is my props.id")
         return (
             <div className="modal" >
                 <div className="modal-content">
