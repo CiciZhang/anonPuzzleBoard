@@ -98,7 +98,6 @@ class DisplayPuzzle extends Component {
                                         </div>
                                         <input type="text" id="riddleAnswer" onChange={this.saveRiddleAnswer} placeholder="Answer" />
                                         <button value={riddleObject.riddleInfo[1]} onClick={this.checkUserInputAnswer}>Submit</button>
-                                        
                                     </form>
                                 </li>)
                         })
