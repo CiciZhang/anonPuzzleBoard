@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/anonPuzzleBoard/static/css/main.6736c8bc.chunk.css",
+    "main.css": "/anonPuzzleBoard/static/css/main.9274ad6f.chunk.css",
     "main.js": "/anonPuzzleBoard/static/js/main.855c670e.chunk.js",
     "main.js.map": "/anonPuzzleBoard/static/js/main.855c670e.chunk.js.map",
     "runtime-main.js": "/anonPuzzleBoard/static/js/runtime-main.d7793cd1.js",
@@ -8,15 +8,15 @@
     "static/js/2.0afe0cbb.chunk.js": "/anonPuzzleBoard/static/js/2.0afe0cbb.chunk.js",
     "static/js/2.0afe0cbb.chunk.js.map": "/anonPuzzleBoard/static/js/2.0afe0cbb.chunk.js.map",
     "index.html": "/anonPuzzleBoard/index.html",
-    "precache-manifest.41cad085c946035017dd096dd6eecece.js": "/anonPuzzleBoard/precache-manifest.41cad085c946035017dd096dd6eecece.js",
+    "precache-manifest.778f2d671512981898e90dc3f5824a2a.js": "/anonPuzzleBoard/precache-manifest.778f2d671512981898e90dc3f5824a2a.js",
     "service-worker.js": "/anonPuzzleBoard/service-worker.js",
-    "static/css/main.6736c8bc.chunk.css.map": "/anonPuzzleBoard/static/css/main.6736c8bc.chunk.css.map",
+    "static/css/main.9274ad6f.chunk.css.map": "/anonPuzzleBoard/static/css/main.9274ad6f.chunk.css.map",
     "static/js/2.0afe0cbb.chunk.js.LICENSE.txt": "/anonPuzzleBoard/static/js/2.0afe0cbb.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.d7793cd1.js",
     "static/js/2.0afe0cbb.chunk.js",
-    "static/css/main.6736c8bc.chunk.css",
+    "static/css/main.9274ad6f.chunk.css",
     "static/js/main.855c670e.chunk.js"
   ]
 }
