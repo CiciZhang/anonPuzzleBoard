@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/anonPuzzleBoard/static/css/main.544e00eb.chunk.css",
-    "main.js": "/anonPuzzleBoard/static/js/main.be10a856.chunk.js",
-    "main.js.map": "/anonPuzzleBoard/static/js/main.be10a856.chunk.js.map",
+    "main.js": "/anonPuzzleBoard/static/js/main.52090965.chunk.js",
+    "main.js.map": "/anonPuzzleBoard/static/js/main.52090965.chunk.js.map",
     "runtime-main.js": "/anonPuzzleBoard/static/js/runtime-main.d7793cd1.js",
     "runtime-main.js.map": "/anonPuzzleBoard/static/js/runtime-main.d7793cd1.js.map",
     "static/js/2.0afe0cbb.chunk.js": "/anonPuzzleBoard/static/js/2.0afe0cbb.chunk.js",
     "static/js/2.0afe0cbb.chunk.js.map": "/anonPuzzleBoard/static/js/2.0afe0cbb.chunk.js.map",
     "index.html": "/anonPuzzleBoard/index.html",
-    "precache-manifest.eea995816eabc210bd0d6a9f3e019a92.js": "/anonPuzzleBoard/precache-manifest.eea995816eabc210bd0d6a9f3e019a92.js",
+    "precache-manifest.480d347bb2c5cc04ff056eb4609cffa5.js": "/anonPuzzleBoard/precache-manifest.480d347bb2c5cc04ff056eb4609cffa5.js",
     "service-worker.js": "/anonPuzzleBoard/service-worker.js",
     "static/css/main.544e00eb.chunk.css.map": "/anonPuzzleBoard/static/css/main.544e00eb.chunk.css.map",
     "static/js/2.0afe0cbb.chunk.js.LICENSE.txt": "/anonPuzzleBoard/static/js/2.0afe0cbb.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.d7793cd1.js",
     "static/js/2.0afe0cbb.chunk.js",
     "static/css/main.544e00eb.chunk.css",
-    "static/js/main.be10a856.chunk.js"
+    "static/js/main.52090965.chunk.js"
   ]
 }

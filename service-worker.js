@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/anonPuzzleBoard/precache-manifest.eea995816eabc210bd0d6a9f3e019a92.js"
+  "/anonPuzzleBoard/precache-manifest.480d347bb2c5cc04ff056eb4609cffa5.js"
 );
 
 self.addEventListener('message', (event) => {
