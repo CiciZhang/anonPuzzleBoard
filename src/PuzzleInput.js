@@ -7,7 +7,8 @@ class PuzzleInput extends Component {
         super()
         this.state = {
             riddleInput: '',
-            answerInput: ''
+            answerInput: '',
+            submissionTime: '',
         }
     }
 
@@ -23,17 +24,24 @@ class PuzzleInput extends Component {
     handleClick = (event) => {
         const dbRef = firebase.database().ref()
         event.preventDefault()
-        if (this.state.riddleInput.length === 0 || this.state.answerInput.length === 0){
-            return alert("Please give me something!")
-        } else {
-            dbRef.push(
-                [this.state.riddleInput, this.state.answerInput])
-        }   
+        let dateOfSubmission = new Date()
+        const dateToString = dateOfSubmission.toDateString()
         this.setState({
-            riddleInput: '',
-            answerInput: '',
+            submissionTime: dateToString
+        }, ()=> {   
+                if (this.state.riddleInput.length === 0 || this.state.answerInput.length === 0) {
+                    return alert("Please give me something!")
+                } else {
+                    dbRef.push(
+                        [this.state.riddleInput, this.state.answerInput, this.state.submissionTime])
+                }
+                this.setState({
+                    riddleInput: '',
+                    answerInput: '',
+                })
         })
     }
+
     render() {
         return (
          <form action = "submit" >

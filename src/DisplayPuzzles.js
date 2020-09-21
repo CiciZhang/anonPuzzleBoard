@@ -92,6 +92,7 @@ class DisplayPuzzle extends Component {
                                     <Modal answerDisplay={this.state.userFeedback} riddleID={riddleObject.id}
                                     answerBool={this.state.answerBool} toggleModal={()=>this.toggleModal}></Modal>
                                     <form action="submit">
+                                        <p className ="dateDisplay">Submitted on: {riddleObject.riddleInfo[2]}</p>
                                         <div className="textBox">
                                             <p>{riddleObject.riddleInfo[0]}</p>
                                         </div>

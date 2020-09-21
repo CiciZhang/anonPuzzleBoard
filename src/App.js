@@ -39,6 +39,7 @@ changeDisplay = () =>{
           </header>
             <div className="formDiv">
             <PuzzleInput />
+            
             </div>
           </div>}
       </div>
